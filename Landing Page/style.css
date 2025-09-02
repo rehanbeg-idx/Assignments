@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header{
+    background-color: #1f2937;
+    color: #E5E7EB;
+    padding: 20px clamp(20px, 10vw, 150px);
+}
+
+.Logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo-class{
+    font-size: 24px;
+    color: #f9faf8;
+}
+
+.links{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 0px;
+    gap: clamp(20px, 10vw, 170px);
+    flex-wrap: wrap;
+}
+
+.hero .content{
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero .content h1{
+    font-size: clamp(32px, 8vw, 48px);
+    font-weight: 900;
+    color: #f9faf8;
+    margin-bottom: 10px;
+}
+
+.hero .content p{
+    color: #E5E7EB;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn{
+    background-color: #3882f6;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #E5E7EB;
+}
+
+.place{
+    background-color: #6B7280;
+    width: 100%;
+    max-width: 500px;
+    min-height: 225px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.info {
+    text-align: center;
+    padding: 50px clamp(20px, 5vw, 50px);
+}
+
+.info h2{
+    font-size: clamp(28px, 6vw, 36px);
+    font-weight: 900;
+    color: #1f2937;
+    margin-bottom: 40px;
+}
+
+.blocks{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 150px;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card-image{
+    width: 100%;
+    height: 150px;
+    border: 3px solid #3882F6;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.quotes{
+    text-align: start;
+    background-color: #e5e7eb;
+    font-size: clamp(24px, 5vw, 36px);
+    font-style: italic;
+    color:#1f2937;  
+    padding: 80px clamp(20px, 20vw, 320px);
+}
+
+.quotes cite{
+    display: block;
+    text-align: right;
+    margin-top: 20px;
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: bold;
+}
+
+.last{
+    margin: 80px clamp(20px, 10vw, 150px);
+    padding: 40px clamp(20px, 5vw, 80px);
+    background-color: #3882f6;
+    color: #E5E7EB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.last-info{
+    flex: 1;
+    min-width: 250px;
+}
+
+.last .btn{
+    border: 2px solid white;
+    flex-shrink: 0;
+}
+
+.foot{
+    padding: 20px 0;
+    background-color: #1f2937;
+    text-align: center;
+    color: #E5E7EB;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .place {
+        margin-left: 0;
+        order: -1;
+    }
+    
+    .Logo {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .links {
+        justify-content: center;
+    }
+    
+    .blocks {
+        gap: 20px;
+    }
+    
+    .card {
+        width: 130px;
+    }
+    
+    .last {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 15px 20px;
+    }
+    
+    .hero {
+        padding: 40px 0;
+    }
+    
+    .info {
+        padding: 40px 20px;
+    }
+    
+    .blocks {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .quotes {
+        padding: 40px 20px;
+    }
+    
+    .last {
+        margin: 40px 20px;
+        padding: 30px 20px;
+    }
+}
