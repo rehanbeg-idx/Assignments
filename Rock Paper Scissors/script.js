@@ -42,18 +42,18 @@ function playGame() {
   }
 
   for (let i = 1; i <= 5; i++) {
-    console.log(`\nRound ${i}`);
+    console.log(`---Round ${i}---`);
     const h = getHumanChoice();
     const c = getComputerChoice();
     playRound(h, c);
     console.log(`Score -> You: ${humanScore}, Computer: ${computerScore}`);
   }
 
-  console.log("\nFinal Result:");
+  console.log("---Final Result---");
   if (humanScore > computerScore) {
-    console.log("Congratulations! You win the game 🎉");
+    console.log("Congratulations! You win the game.");
   } else if (computerScore > humanScore) {
-    console.log("Sorry! The computer wins the game 🤖");
+    console.log("Sorry! The computer wins the game.");
   } else {
     console.log("It's a tie overall!");
   }
