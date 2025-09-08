@@ -8,6 +8,25 @@ btn.addEventListener("click", () => {
   a.removeAttribute("style");
 });
 
+const arr = {
+  name: "abc",
+  age: 21,
+};
+
+// for in loop usually focuses on indexes and is often used in objects
+for (const key in arr) {
+  // console.log(arr[key]); // prints  values i.e abc and 21
+
+  console.log(key); // prints index i.e name and age
+}
+
+const ar = [1, 2, 3, 4];
+
+// for of loop focuses on values and is used in arrays
+for (const element of ar) {
+  console.log(element);
+}
+
 // async function p() {
 //   // return new Promise((resolve, reject) => {       // Promises example!!!
 //   //   setTimeout(() => resolve(455), 3500);
@@ -40,22 +59,24 @@ btn.addEventListener("click", () => {
 
 // main();
 
-async function getSong() {
-  let x = await fetch();
-  let d = document.createElement("div");
-  d.innerHTML = response();
-  let as = d.getElementsByTagName("a");
-  let songs = [];
-  for (let i = 0; i < as.length; i++) {
-    const element = as[i];
-    if (element.href.endsWith(".mp3")) {
-      songs.push(element);
-    }
-  }
-  return songs;
-}
+// async function getSong() {
+//   let x = await fetch();
+//   let d = document.createElement("div");
+//   d.innerHTML = response();
+//   let as = d.getElementsByTagName("a");
+//   let songs = [];
+//   for (let i = 0; i < as.length; i++) {
+//     const element = as[i];
+//     if (element.href.endsWith(".mp3")) {
+//       songs.push(element);
+//     }
+//   }
+//   return songs;
+// }
 
-async function main() {
-  let songs = await getSong();
-  console.log(songs);
-}
+// async function main() {
+//   let songs = await getSong();
+//   console.log(songs);
+// }
+
+// main();
