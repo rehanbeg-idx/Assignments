@@ -47,3 +47,6 @@ class User {
 const e = new User("Max", "Stevens");
 e.nam = 'Max';
 console.log(e.fullName);
+
+let arr = ['admin', 'user', 'guest'] as const;
+// arr.push('abc'); // not able to push as the array is declared as const.
