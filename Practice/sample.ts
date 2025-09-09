@@ -18,6 +18,32 @@ type Role = "admin" | "guest" | "user"; // The type keyword can be used to defin
 
 let r: Role = "admin";
 
-const s = (a: number, d: number) => {
+const add = (a: number, d: number) => {
   return a + d;
 };
+
+const sub = (a: number, b: number) => a - b;
+
+const addnum = (...num: number[]) => {
+  return num.reduce((currRes, currVal) => {
+    return currRes + currVal;
+  }, 0);
+};
+
+class User {
+  constructor(public firstName: string, private lastName: string) {}
+
+  private _firstName;
+  get fullName() {
+    return this.firstName + " " + this.lastName;
+  }
+
+  set nam(n : string){
+    this._firstName = n;
+  }
+
+}
+
+const e = new User("Max", "Stevens");
+e.nam = 'Max';
+console.log(e.fullName);

@@ -8,6 +8,14 @@ btn.addEventListener("click", () => {
   a.removeAttribute("style");
 });
 
+// btn.onclick = () => {
+//   alert("Hey what are you doing??????");
+// };
+
+function alertFunction(){
+  alert("You clicked!!!");
+}
+
 const arr = {
   name: "abc",
   age: 21,
@@ -27,17 +35,25 @@ for (const element of ar) {
   console.log(element);
 }
 
-function name(n, callback){
+function name(n, callback) {
   console.log("hello " + n);
   callback();
 }
 
-function say(){
+function say() {
   console.log("Goodbye");
 }
 
-let k = name('abc', say);
+let k = name("abc", say);
 
+const obj = {
+  name: "abc",
+  age: 16,
+};
+
+const n = { ...obj };
+
+console.log(n);
 
 // async function p() {
 //   // return new Promise((resolve, reject) => {       // Promises example!!!
