@@ -38,15 +38,28 @@ class User {
     return this.firstName + " " + this.lastName;
   }
 
-  set nam(n : string){
+  set nam(n: string) {
     this._firstName = n;
   }
-
 }
 
 const e = new User("Max", "Stevens");
-e.nam = 'Max';
+e.nam = "Max";
 console.log(e.fullName);
 
-let arr = ['admin', 'user', 'guest'] as const;
+let arr = ["admin", "user", "guest"] as const;
 // arr.push('abc'); // not able to push as the array is declared as const.
+
+let dat = {
+  entry1: 1,
+  entry2: 2,
+} satisfies Record<string, number>; // satisfies keyword checks the object thoroughly and ensures that the specific key is present inside it
+
+// dat.entry3; // doesnt work throws error
+
+let da : Record<string, number> = {
+  entry1: 1,
+  entry2: 2,
+}
+
+da.entry3;  // this works
