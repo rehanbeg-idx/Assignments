@@ -27,6 +27,18 @@ for (const element of ar) {
   console.log(element);
 }
 
+function name(n, callback){
+  console.log("hello " + n);
+  callback();
+}
+
+function say(){
+  console.log("Goodbye");
+}
+
+let k = name('abc', say);
+
+
 // async function p() {
 //   // return new Promise((resolve, reject) => {       // Promises example!!!
 //   //   setTimeout(() => resolve(455), 3500);
