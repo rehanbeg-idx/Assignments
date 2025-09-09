@@ -8,7 +8,7 @@ x = [1, 2, 3, 4];
 let b: (number | string)[];
 b = [1, "abc"];
 
-let data: Record<string, number | string>; // Creates a object
+let data: Record<string, number | string | boolean>; // Creates a object that stores string as key and number, string or boolean as value
 data = {
   name: "abc",
   age: 2,
