@@ -11,20 +11,20 @@ function getComputerChoice() {
 
 function getHumanChoice() {
   let choice = prompt("Enter Rock, Paper, Scissors: ");
-  if (!choice) return null; 
-
+  if (!choice) {
+    alert("You must enter a choice!");
+    return getHumanChoice(); 
+  }
   choice = choice.toLowerCase();
   if (choice === "rock" || choice === "paper" || choice === "scissors") {
     return choice;
   } else {
     alert("Invalid input! Please enter Rock, Paper, or Scissors.");
-    return null; 
+    return getHumanChoice(); 
   }
 }
 
 function playRound(humanChoice, computerChoice, scores) {
-  if (!humanChoice) return;
-
   if (humanChoice === computerChoice) {
     console.log(`It's a tie! You both chose ${humanChoice}.`);
   } else if (
