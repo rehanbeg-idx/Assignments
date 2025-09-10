@@ -19,3 +19,6 @@ class App {
     console.log("Hello " + name);
   }
 }
+
+const max = new App();
+console.log(max);
