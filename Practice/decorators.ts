@@ -7,7 +7,11 @@ function logger<T extends new (...args: any[]) => any>(
   console.log(ctx);
 
   return class extends target {
-    age: number = 35;
+    // age: number = 35;
+    constructor(...args: any[]) {
+      super(...args);
+      console.log("This is a decorators  constructor!");
+    }
   };
 }
 
