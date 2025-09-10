@@ -11,6 +11,7 @@ function logger<T extends new (...args: any[]) => any>(
     constructor(...args: any[]) {
       super(...args);
       console.log("This is a decorators  constructor!");
+      console.log(this); // prints the instance of our class
     }
   };
 }
@@ -20,7 +21,7 @@ class App {
   name: string = "abc";
 
   greet() {
-    console.log("Hello " + name);
+    console.log("Hello " + this.name);
   }
 }
 
