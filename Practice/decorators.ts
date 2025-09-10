@@ -16,10 +16,16 @@ function logger<T extends new (...args: any[]) => any>(
   };
 }
 
+function bind(target: Function, ctx: ClassMethodDecoratorContext) {
+    console.log(target);
+    console.log(ctx);
+}
+
 @logger
 class App {
   name: string = "abc";
 
+  @bind
   greet() {
     console.log("Hello " + this.name);
   }

@@ -1,4 +1,4 @@
-let users: Array<number>; // using generic array class
+let users: Array<number | string | null>; // using generic array class
 
 users = [1, 2, 5];
 
