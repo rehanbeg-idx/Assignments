@@ -12,7 +12,7 @@ btn.addEventListener("click", () => {
 //   alert("Hey what are you doing??????");
 // };
 
-function alertFunction(){
+function alertFunction() {
   alert("You clicked!!!");
 }
 
@@ -20,6 +20,18 @@ const arr = {
   name: "abc",
   age: 21,
 };
+
+// Event Bubbling example
+document.querySelector(".co").addEventListener("click", () => {
+  alert("Hey I am smallest");
+  event.stopPropagation(); // this can be used to stop the parents event from being ivoked.
+});
+document.querySelector(".con").addEventListener("click", () => {
+  alert("Hey I am mid");
+});
+document.querySelector(".cont").addEventListener("click", () => {
+  alert("Hey I am the highest");
+});
 
 // for in loop usually focuses on indexes and is often used in objects
 for (const key in arr) {
