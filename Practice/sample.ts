@@ -47,8 +47,8 @@ const e = new User("Max", "Stevens");
 e.nam = "Max";
 console.log(e.fullName);
 
-let arr = ["admin", "user", "guest"] as const;
-// arr.push('abc'); // not able to push as the array is declared as const.
+let arr1 = ["admin", "user", "guest"] as const;
+// arr1.push('abc'); // not able to push as the array is declared as const.
 
 let dat = {
   entry1: 1,
@@ -63,3 +63,10 @@ let da : Record<string, number> = {
 }
 
 da.entry3;  // this works
+
+
+function merge<T>(a:T, b : T){
+  return [a, b];
+} 
+
+const id = merge(5, 20);
