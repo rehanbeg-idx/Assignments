@@ -57,16 +57,27 @@ let dat = {
 
 // dat.entry3; // doesnt work throws error
 
-let da : Record<string, number> = {
+let da: Record<string, number> = {
   entry1: 1,
   entry2: 2,
+};
+
+da.entry3; // this works
+
+function merge<T>(a: T, b: T) {
+  return [a, b];
 }
 
-da.entry3;  // this works
-
-
-function merge<T>(a:T, b : T){
-  return [a, b];
-} 
-
 const id = merge(5, 20);
+
+function merg<T, U>(a: T, b: U) {
+  return [a, b];
+}
+
+const ids = merg(5, "hello");
+
+function mergeObj<T extends object>(a : T, b : T){
+  return {...a, ...b};
+}
+
+const merged = mergeObj({userName : 'abc'}, {age : 21});
