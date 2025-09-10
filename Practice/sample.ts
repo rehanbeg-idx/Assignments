@@ -81,3 +81,14 @@ function mergeObj<T extends object>(a : T, b : T){
 }
 
 const merged = mergeObj({userName : 'abc'}, {age : 21});
+
+const settings ={
+  difficulty : 'easy',
+  mode : 'hardcore',
+  level : 21,
+  players : ['abx', 'xyz']
+}
+
+type Settings = typeof settings;
+
+function loadData(s : typeof settings){}
