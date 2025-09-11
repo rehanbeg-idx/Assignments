@@ -16,16 +16,17 @@ function logger<T extends new (...args: any[]) => any>(
   };
 }
 
-function bind(target: Function, ctx: ClassMethodDecoratorContext) {
-    console.log(target);
-    console.log(ctx);
+function autobind(target: Function, ctx: ClassMethodDecoratorContext) {
+    ctx.addInitializer(function(this:any){
+      return this[ctx.name] = this[ctx.name].bind(this);
+    })
 }
 
 @logger
 class App {
   name: string = "abc";
 
-  @bind
+  @autobind
   greet() {
     console.log("Hello " + this.name);
   }
