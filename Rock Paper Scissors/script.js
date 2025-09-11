@@ -13,14 +13,15 @@ function getHumanChoice() {
   let choice = prompt("Enter Rock, Paper, Scissors: ");
   if (!choice) {
     alert("You must enter a choice!");
-    return getHumanChoice(); 
+    return getHumanChoice();
   }
   choice = choice.toLowerCase();
-  if (choice === "rock" || choice === "paper" || choice === "scissors") {
+  let arr =['rock', 'paper', 'scissors'];
+  if (arr.includes(choice)) {
     return choice;
   } else {
     alert("Invalid input! Please enter Rock, Paper, or Scissors.");
-    return getHumanChoice(); 
+    return getHumanChoice();
   }
 }
 
