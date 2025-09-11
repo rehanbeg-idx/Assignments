@@ -16,7 +16,7 @@ function logger<T extends new (...args: any[]) => any>(
   };
 }
 
-function autobind(target: Function, ctx: ClassMethodDecoratorContext) {
+function autobin(target: Function, ctx: ClassMethodDecoratorContext) {
   ctx.addInitializer(function (this: any) {
     return (this[ctx.name] = this[ctx.name].bind(this));
   });
@@ -26,7 +26,7 @@ function autobind(target: Function, ctx: ClassMethodDecoratorContext) {
 class App {
   name: string = "abc";
 
-  @autobind
+  @autobin
   greet() {
     console.log("Hello " + this.name);
   }
