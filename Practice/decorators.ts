@@ -17,9 +17,9 @@ function logger<T extends new (...args: any[]) => any>(
 }
 
 function autobind(target: Function, ctx: ClassMethodDecoratorContext) {
-    ctx.addInitializer(function(this:any){
-      return this[ctx.name] = this[ctx.name].bind(this);
-    })
+  ctx.addInitializer(function (this: any) {
+    return (this[ctx.name] = this[ctx.name].bind(this));
+  });
 }
 
 @logger
@@ -34,3 +34,19 @@ class App {
 
 const max = new App();
 console.log(max);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+function Log(str: string) {
+  return function (constructor: Function) {
+    console.log(str);
+    console.log(constructor);
+  };
+}
+
+@Log("Initializing...........")
+class B {
+  constructor() {
+    console.log("Executing Constructor");
+  }
+}
