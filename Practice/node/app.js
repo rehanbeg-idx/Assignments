@@ -1,13 +1,20 @@
-// var greet = require("./greet");
+// // var greet = require("./greet");
 
-// greet();
+// // greet();
 
-const person = {
-    firstname : 'abc',
-    lastName : 'xyz',
-    greet : function(){
-        console.log('Hello ' + this.firstname + ' ' + this.lastName);
-    }
-}
+// const person = {
+//     firstname : 'abc',
+//     lastName : 'xyz',
+//     greet : function(){
+//         console.log('Hello ' + this.firstname + ' ' + this.lastName);
+//     }
+// }
 
-person.greet();
+// person.greet();
+
+// console.log(person['firstname']);
+
+var greet = require("./greet");
+
+greet.english();
+greet.spanish();
