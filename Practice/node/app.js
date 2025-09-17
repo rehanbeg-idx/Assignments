@@ -14,7 +14,23 @@
 
 // console.log(person['firstname']);
 
-var greet = require("./greet");
+// var greet = require("./greet");
 
-greet.english();
-greet.spanish();
+// greet.english();
+// greet.spanish();
+
+var Emitter = require('./emitter');
+
+var emtr = new Emitter();
+
+emtr.on('greet', function(){
+    console.log('Somewhere, someone said hello.');
+});
+
+emtr.on('greet', function(){
+    console.log('A greeting occurred!');
+});
+
+console.log('Hello!');
+
+emtr.emit('greet');
