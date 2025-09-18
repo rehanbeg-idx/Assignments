@@ -10,6 +10,10 @@
 //     }
 // }
 
+// var per = Object.create(person);
+// per.firstname = 'kbc';
+// per.lastname = 'pqr';
+
 // person.greet();
 
 // console.log(person['firstname']);
@@ -19,7 +23,9 @@
 // greet.english();
 // greet.spanish();
 
-var Emitter = require('./emitter');
+// var Emitter = require('./emitter');
+
+var Emitter = require('events');  // Using library
 
 var emtr = new Emitter();
 
