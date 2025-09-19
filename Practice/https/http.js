@@ -15,16 +15,20 @@ http.createServer(function (req, res) {
       fs.createReadStream(__dirname + "/index.html").pipe(res);
     }
     
-    if (req.url === "/api") {
+    else if (req.url === "/api") {
       res.writeHead(200, "content-Type", {
         "Content-Type": "application/json",
       });
       var obj = {
         firstName: "abc",
         lastName: "xyz",
-      };
+      }; 
 
       res.end(JSON.stringify(obj));
+    }
+    else{
+        res.writeHead(404);
+        res.end();
     }
   })
   .listen(4000, "127.0.0.1");
