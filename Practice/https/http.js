@@ -12,9 +12,7 @@ var fs = require("fs");
 http.createServer(function (req, res) {
 
     if (req.url === "/") {
-      res.writeHead(200, { "Content-Type": "text/html" });
-      var html = fs.readFileSync(__dirname + "/index.html", "utf-8");
-      res.end(html);
+      fs.createReadStream(__dirname + "/index.html").pipe(res);
     }
     
     if (req.url === "/api") {
@@ -29,4 +27,4 @@ http.createServer(function (req, res) {
       res.end(JSON.stringify(obj));
     }
   })
-  .listen(3000, "127.0.0.1");
+  .listen(4000, "127.0.0.1");
