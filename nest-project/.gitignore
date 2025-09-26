@@ -62,3 +62,5 @@ db.sqlite
 request.http
 
 .prettierrc
+.env.development
+.env.test
