@@ -1,17 +1,18 @@
-import { Module } from '@nestjs/common';
+import { Module, MiddlewareConsumer } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { ReportsModule } from './reports/reports.module';
-import { Users } from './users/users.entity';
-import { Reports } from './reports/reports.entity';
-import { MiddlewareConsumer } from '@nestjs/common';
 import cookieSession from 'cookie-session';
+import * as path from 'path';
+
+// Resolve absolute path to root ormconfig.js
+const {dbConfig} = require(path.resolve(__dirname, '..', '..', 'ormconfig.js'));
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(),
+    TypeOrmModule.forRoot(dbConfig),
     UsersModule,
     ReportsModule,
   ],
