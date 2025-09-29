@@ -24,7 +24,7 @@ export class Users {
   admin: boolean;
 
   @OneToMany(() => Reports, (report) => report.user)
-  reports: Report[];
+  reports: Reports[];
 
   @AfterInsert()
   logInsert() {

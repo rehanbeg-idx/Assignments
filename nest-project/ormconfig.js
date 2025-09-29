@@ -1,14 +1,12 @@
 const { DataSource } = require('typeorm');
+const path = require('path');
 
 const dbConfig = {
   type: 'sqlite',
   database: 'db.sqlite',
   synchronize: false,
-  entities: ['**/*.entity.js'],
-  migrations: ['migrations/*.js'],
-  cli: {
-    migrationsDir: 'migrations',
-  },
+  entities: [path.join(__dirname, '**/*.entity.js')],
+  migrations: [path.join(__dirname, 'migrations/*.js')],
 };
 
 switch (process.env.NODE_ENV) {
@@ -16,15 +14,17 @@ switch (process.env.NODE_ENV) {
     Object.assign(dbConfig, {
       type: 'sqlite',
       database: 'db.sqlite',
-      entities: ['**/*.entity.js'],
+      entities: [path.join(__dirname, '**/*.entity.js')],
+      synchronize: true, 
     });
     break;
   case 'test':
     Object.assign(dbConfig, {
       type: 'sqlite',
       database: 'test.sqlite',
-      entities: ['**/*.entity.ts'],
+      entities: [path.join(__dirname, '**/*.entity.ts')],
       migrationsRun: true,
+      synchronize: true,
     });
     break;
   case 'production':
@@ -35,7 +35,4 @@ switch (process.env.NODE_ENV) {
 
 const AppDataSource = new DataSource(dbConfig);
 
-module.exports = {
-  dbConfig,
-  AppDataSource,
-};
+module.exports = { dbConfig, AppDataSource };
