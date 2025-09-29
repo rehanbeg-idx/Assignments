@@ -31,8 +31,14 @@ export class ReportsService {
     return this.repo.save(report);
   }
 
-  findAll() {
-    return this.repo.find();
+  findAll(user : Users) {
+    
+    if(user.admin){
+      return this.repo.find({relations:['user']})
+    }
+    else{
+      return this.repo.find({where :{user:{id: user.id}},relations:['user']})
+    }
   }
 
   async update(id: number, attrs: Partial<Reports>) {

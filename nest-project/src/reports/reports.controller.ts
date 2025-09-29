@@ -7,14 +7,14 @@ import { CurrentUser } from 'src/users/decorators/current-user.decorator';
 import { Users } from 'src/users/users.entity';
 import { Report } from './dtos/report.dto';
 import { Serialize } from 'src/interceptors/serialize.interceptor';
-import { AdminGuard } from 'src/gurads/admin.guard';
 import { GetEstimateDto } from './dtos/get-estimate.dto';
+import { UpdateReportDto } from './dtos/update-report.dto';
 
 @Controller('reports')
 export class ReportsController {
   constructor(private reportsService: ReportsService) {}
 
-  @Get()
+  @Get('/estimate')
   getEstimate(@Query() query : GetEstimateDto){
     return this.reportsService.createEstimate(query);
   }
@@ -27,12 +27,12 @@ export class ReportsController {
   }
 
   @Get()
-  findReport() {
-    return this.reportsService.findAll();
+  findReport(@CurrentUser() users : Users) {
+    return this.reportsService.findAll(users);
   }
 
   @Patch('/:id')
-  updateReport(@Param('id') id: number, @Body() body: CreateReportDto) {
+  updateReport(@Param('id') id: number, @Body() body: UpdateReportDto) {
     return this.reportsService.update(id, body);
   }
 }

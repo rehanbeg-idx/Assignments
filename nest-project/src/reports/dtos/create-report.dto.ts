@@ -1,32 +1,38 @@
 import { Injectable } from "@nestjs/common";
 import { IsString, IsNumber, Min, Max, IsLongitude, IsLatitude } from "class-validator";
+import { Type } from "class-transformer";
 
 @Injectable()
 export class CreateReportDto{
 
     @IsString()
-    make : string;
+    make: string;
 
     @IsString()
-    model : string;
+    model: string;
 
+    @Type(() => Number)          
     @IsNumber()
     @Min(1900)
     @Max(2026)
-    year : number;
+    year: number;
 
+    @Type(() => Number)
     @IsNumber()
     @Min(0)
     @Max(1000000)
-    mileage : number;
+    mileage: number;
 
+    @Type(() => Number)
     @IsLongitude()
-    lng : number;
+    lng: number;
 
+    @Type(() => Number)
     @IsLatitude()
-    lat : number;
+    lat: number;
 
+    @Type(() => Number)
     @IsNumber()
     @Min(0)
-    price : number;
+    price: number;
 }
