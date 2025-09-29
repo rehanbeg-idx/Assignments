@@ -15,7 +15,8 @@ switch (process.env.NODE_ENV) {
       type: 'sqlite',
       database: 'db.sqlite',
       entities: [path.join(__dirname, '**/*.entity.js')],
-      synchronize: true, 
+      migrationsRun: true,
+      synchronize: true,
     });
     break;
   case 'test':
