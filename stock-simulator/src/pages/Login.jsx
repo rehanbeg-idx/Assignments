@@ -5,7 +5,7 @@ const Login = ({ onLogin }) => {
   const [email, setEmail] = useState("");
 
   const handleSubmit = () => {
-    if (email) {
+    if (email && email.includes('@')) {
       onLogin(email);
     }
   };
