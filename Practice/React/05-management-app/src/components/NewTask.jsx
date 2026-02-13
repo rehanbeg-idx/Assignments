@@ -23,7 +23,7 @@ export default function NewTask({ onAdd, onDelete }) {
         value={enteredTask}
       />
       <button
-        className="text-stone-700 hover:text-stone-950"
+        className="text-stone-200 hover:text-primary-light"
         onClick={handleClick}
       >
         Add Task
