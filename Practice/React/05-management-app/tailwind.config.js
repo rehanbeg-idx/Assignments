@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         primary: "var(--color-primary)",
-        sidebarPrimary: "var(--sidebar-primary)",
+        secondary: "var(--color-secondary)",
       },
     },
   },
